@@ -5,7 +5,7 @@ class Route
     private $routes;
 
     public function __construct(){
-        $this->routes = include(ROOT . '/config/routes.php');
+        $this->routes = include(ROOT . '\config\routes.php');
     }
 
     private function getUri(){
@@ -23,7 +23,10 @@ class Route
                 $controllerName = ucfirst($controllerName);
                 $actionName  = 'action' . ucfirst(array_shift($segments));
                 $parameters = $segments;
-                $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
+                $controllerFile = ROOT . '\controllers\\' . $controllerName . '.php';
+
+                var_dump($controllerFile);
+
                 if(file_exists($controllerFile)){
                     include_once ($controllerFile);
                 }
