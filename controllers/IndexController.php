@@ -4,19 +4,20 @@ class IndexController
 {
     public function actionIndex()
     {
-        return "actionIndex";
+        echo "actionIndex";
+        return true;
     }
 
     public function actionUser()
     {
-        return "actionUsers";
-
+        echo "actionUser";
+        return true;
     }
 
     public function actionAdvertisement()
     {
-        
-        return "actionAdvertisement";
+        echo "actionAdvertisement";
+        return true;
     }
 }
 
