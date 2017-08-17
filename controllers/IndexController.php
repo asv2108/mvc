@@ -1,26 +1,33 @@
 <?php
-include_once ROOT . '\мodels\User.php';
-//include_once ROOT. '\models\Advertisement.php';
+require_once(ROOT . '\мodels\User.php');  // I GET FAULT HERE!!!!!!!!!!!!
+//include_once ROOT. '\мodels\User.php';
 
+/**
+ * Class IndexController
+ */
 class IndexController
 {
+    /**
+     * 
+     */
     public function actionIndex()
     {
         $usersList = [];
-        $userModel = new User();
-        $usersList = $userModel->UsersList();
-        echo "<pre>";
-        var_dump($usersList);
+//        $userModel = new User();
+//        $usersList = $userModel->UsersList();
+        echo "I am here";
         exit;
-//        $adv = [];
-//        $adv = Advertisement::getAdvertisementList();
-        return true;
+
     }
 
+    /**
+     * get values for a selected user
+     * 
+     * @param $parameters
+     * @return bool
+     */
     public function actionUser($parameters)
     {
-//        $userValues = [];
-//        $userValues = User::UserById($parameters[0]);
         return true;
     }
 
