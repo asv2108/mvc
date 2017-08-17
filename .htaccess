@@ -1,0 +1,6 @@
+#Enable the mod_rewrite engine for the current request
+RewriteEngine on
+# if a file extension is not js,css,gif,png,jpg redirect to index.php
+RewriteRule !\.(js|css|gif|png|jpg)$ index.php
+# set the desired encoding
+AddDefaultCharset utf-8
