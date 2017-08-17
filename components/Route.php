@@ -17,16 +17,23 @@ class Route
         $request = $this->getUri();
         foreach ($this->routes as $url => $path){
             if(preg_match("~$url~",$request)){
-                $segments = explode('/', $path);
+                $internalRoute = preg_replace("~$url~",$path,$request);
+                $segments = explode('/', $internalRoute);
                 $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
                 $actionName  = 'action' . ucfirst(array_shift($segments));
+                $parameters = $segments;
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
                 if(file_exists($controllerFile)){
                     include_once ($controllerFile);
                 }
                 $controllerObject = new $controllerName;
-                $result = $controllerObject->$actionName();
+                // for send parameters as variables $result = call_user_func_array(array($controllerObject,$actionName),$parameters);
+                $result = null;
+                if($parameters){
+                    $result = $controllerObject->$actionName($parameters);
+                }else
+                    $result = $controllerObject->$actionName();
                 if($result != null){
                     break;
                 }

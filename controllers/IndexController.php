@@ -1,23 +1,24 @@
 <?php
 
+include_once ROOT. "/models/User.php";
+include_once ROOT. "/models/Advertisement.php";
+
 class IndexController
 {
     public function actionIndex()
     {
-        echo "actionIndex";
+        $usersList = [];
+        $usersList = User::UsersList();
+        $adv = [];
+        $adv = Advertisement::getAdvertisementList();
         return true;
     }
 
-    public function actionUser()
+    public function actionUser($parameters)
     {
-        echo "actionUser";
-        return true;
+        $userValues = [];
+        $userValues = User::UserById($parameters[0]);
     }
 
-    public function actionAdvertisement()
-    {
-        echo "actionAdvertisement";
-        return true;
-    }
 }
 

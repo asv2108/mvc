@@ -1,6 +1,5 @@
 <?php
 return array(
     'index'=>'index/index',
-    'users'=>'index/user',
-    'advertisement'=>'index/advertisement'
+    'user/([0-9]+)'=>'index/user/$1',
 );
