@@ -16,6 +16,7 @@ class User
      */
     public function __construct()
     {
+        // TODO replace into config.ini
         $host = 'localhost';
         $db = 'mvc';
         $user = 'root';
