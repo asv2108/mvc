@@ -1,20 +1,17 @@
 <?php
-require_once(ROOT . '\мodels\User.php');  // I GET FAULT HERE!!!!!!!!!!!!
-//include_once ROOT. '\мodels\User.php';
-
+//require_once ROOT . '\мodels\User.php';  // I GOT FAULT HERE!!!!!!!!!!!!
+require_once ROOT . '\models\User.php';
 /**
  * Class IndexController
  */
 class IndexController
 {
-    /**
-     * 
-     */
+    
     public function actionIndex()
     {
         $usersList = [];
-//        $userModel = new User();
-//        $usersList = $userModel->UsersList();
+        $userModel = new User();
+        $usersList = $userModel->UsersList();
         echo "I am here";
         exit;
 
@@ -26,10 +23,10 @@ class IndexController
      * @param $parameters
      * @return bool
      */
-    public function actionUser($parameters)
-    {
-        return true;
-    }
+//    public function actionUser($parameters)
+//    {
+//        return true;
+//    }
 
 }
 

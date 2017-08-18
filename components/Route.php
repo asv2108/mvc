@@ -36,7 +36,7 @@ class Route
     public function run(){
         $request = $this->getUri();
         if($request==''){ // base path
-            include_once ROOT . '\controllers\IndexController' . '.php';
+            include_once ROOT . '\controllers\IndexController.php';
             $controllerObject = new IndexController();
             $controllerObject->actionIndex();
 
