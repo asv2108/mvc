@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="http://bootstrap-3.ru/assets/ico/favicon.ico">
     <link rel="stylesheet" href="/template/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/template/css/chosen.css" type="text/css">
 
     <title><?=$title?></title>
 
@@ -22,6 +23,8 @@
     <![endif]-->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/template/js/main.js"></script>
+    <script type="text/javascript" src="/template/js/chosen.js"></script>
 </head>
 
 <body>
@@ -30,19 +33,20 @@
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            </button>-->
+            <span class="glyphicon glyphicon-home"></span>
+            <a class="navbar-brand" href="index">My site</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="active"><a href="/index">Home</a></li>
+                <li><a href="/add">Add user</a></li>
+                <li><a href="#">Link</a></li>
                 <li class="dropdown">
                     <a href="http://bootstrap-3.ru/examples/sticky-footer-navbar/#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">

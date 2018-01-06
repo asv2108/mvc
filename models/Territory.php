@@ -1,24 +1,13 @@
 <?php
 
-/**
- * Class User
- */
-class User
+class Territory
 {
-    
-    /**
-     * get list of users
-     * 
-     * @return mixed
-     */
-    public static function usersList()
+    public static function areaList()
     {
         $db = Db::getConnection();
         $res = [];
         try {
-            $sql = 'SELECT `name`,email, 
-                    (SELECT ter_address FROM t_koatuu_tree AS t  WHERE t.ter_id = u.territory_area)AS area 
-                    FROM `user` AS u';
+            $sql = 'SELECT ter_id AS id, ter_address as area FROM t_koatuu_tree WHERE ter_type_id=0';
             $resultUsers = $db->query($sql) or die('Error user model string 37');;
             $i=1;
             while($row = $resultUsers->fetch(PDO::FETCH_ASSOC)){
@@ -30,13 +19,5 @@ class User
         }
 
         return $res;
-    }
-
-    /**
-     * @param $id
-     */
-    public static function UserById($id)
-    {
-
     }
 }

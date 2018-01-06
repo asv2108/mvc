@@ -1,12 +1,11 @@
 <?php
     require_once('/views/layout/header.php');
     if (!isset($usersList)) $usersList = [];
-
 ?>
 <div class="wrap">
     <div class="container">
         <div class="button-add ">
-            <a href="/index/add">Add a new user</a>
+            <a href="/add">Add a new user</a>
         </div>
         <div class="col-md-8 col-md-offset-2">
             <table class="table table-striped">
@@ -22,7 +21,7 @@
                 <tr>
                     <td><?=$item['name']?></td>
                     <td><?=$item['email']?></td>
-                    <td><?=$item['address']?></td>
+                    <td><?=$item['area']?></td>
                 </tr>
             <?php endforeach;?>
                 </tbody>
