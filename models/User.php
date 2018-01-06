@@ -16,7 +16,9 @@ class User
         $db = Db::getConnection();
         $res = [];
         try {
-            $sql = 'SELECT id, `name` FROM users ';
+            $sql = 'SELECT `name`,email,t.ter_address AS address FROM `user` AS u
+                    JOIN t_koatuu_tree AS t ON u.territory = t.ter_id
+            ';
             $resultUsers = $db->query($sql) or die('Error user model string 37');;
             $i=1;
             while($row = $resultUsers->fetch(PDO::FETCH_ASSOC)){

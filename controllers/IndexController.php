@@ -8,8 +8,6 @@ class IndexController
     
     public function actionIndex()
     {
-       
-        $usersList = [];
         $userModel = new User();
         $usersList = $userModel->UsersList();
         $title = 'Main page';
@@ -17,14 +15,10 @@ class IndexController
         return true;
     }
 
-    /**
-     * get values for a selected user
-     * 
-     * @param $parameters
-     * @return bool
-     */
-    public function actionUser($parameters)
+    
+    public function actionAdd()
     {
+        require_once ROOT . '\views\index\add.php';
         return true;
     }
 
