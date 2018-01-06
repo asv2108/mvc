@@ -1,0 +1,37 @@
+body{
+    margin-bottom: 50px !important;
+}
+
+html{
+    position:relative;
+    min-height: 100%;
+}
+
+footer{
+    position:absolute;
+    bottom: 0;
+    height: 50px;
+    padding-left: 100px;
+    background-color: #e7e7e7;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.navbar-default{
+    padding-left: 15vw;
+    padding-right: 5vw;
+}
+
+#my-nav-title{
+    font-size: 1.8em;
+    margin-top: 2vh;
+}
+.glyphicon-home{
+    font-size: 1.8em;
+    margin-top: 2vh;
+    color: #777777;
+}
+
+#navbar-main{
+    padding-left: 40vw ;
+}

@@ -1,33 +1,11 @@
 <?php
+
 /**
  * Class User
  */
 class User
 {
-    /**
-     * @var PDO
-     */
-    private $db;
-
-    /**
-     * preparing work with db
-     * 
-     * User constructor.
-     */
-    public function __construct()
-    {
-        // TODO replace into config.ini
-        $host = 'localhost';
-        $db = 'mvc';
-        $user = 'root';
-        $password = '';
-        try {
-            $this->db = new PDO("mysql:$host;dbname=$db",$user,$password);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
-
+    
     /**
      * get list of users
      * 
@@ -35,14 +13,16 @@ class User
      */
     public function UsersList()
     {
-        $res = '';
+        $db = Db::getConnection();
+        $res = [];
         try {
-            $resultUsers = $this->db->query('SELECT id, `name` FROM users ');
-            echo "<pre>";
-            var_dump($resultUsers);
-            exit;
-            $res = $resultUsers->fetch(PDO::FETCH_ASSOC);
-
+            $sql = 'SELECT id, `name` FROM users ';
+            $resultUsers = $db->query($sql) or die('Error user model string 37');;
+            $i=1;
+            while($row = $resultUsers->fetch(PDO::FETCH_ASSOC)){
+                $res[$i] = $row;
+                $i++;
+            }
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
