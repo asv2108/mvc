@@ -61,6 +61,7 @@ class Router
                     if(file_exists($controllerFile)){
                         include_once ($controllerFile);
                     }
+
                     $controllerObject = new $controllerName;
                     $result = null;
                     if($parameters){
@@ -71,7 +72,6 @@ class Router
                             $result = $controllerObject->$actionName($parameters);
                     }else
                         $result = $controllerObject->$actionName();
-
                     if($result != null){
                         $wrong_way = false;
                         break;

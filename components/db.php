@@ -1,5 +1,5 @@
 <?php
-
+//TODO the Singleton pattern for it
 class Db
 {
     public static function getConnection()
