@@ -8,6 +8,8 @@
 // set first part absolute address to files
 define('ROOT', dirname(__FILE__));
 
+<h1>fsdf</h1?
+
 require_once(ROOT . '\components\Router.php');
 require_once ROOT . '\components\Db.php';
 $route = new Router();
